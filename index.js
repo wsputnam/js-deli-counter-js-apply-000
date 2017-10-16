@@ -1,17 +1,21 @@
-var katzDeliLine = [];
+
+var count = 1;
 
 function takeANumber(katzDeliLine, newPerson) {
-  katzDeliLine.push(newPerson);
-  return 'Welcome, ' + newPerson + '. You are number ' + [parseInt(katzDeliLine.indexOf(newPerson))+1] + ' in line.';
+  // need array of numbers
+  katzDeliLine.push(count);
+  count++;
+  return 'Welcome. You are number ' + katzDeliLine[katzDeliLine.length - 1];
 }
 
 function nowServing(katzDeliLine) {
   if (katzDeliLine.length === 0) {
     return 'There is nobody waiting to be served!'
   } else {
-    return 'Currently serving ' + katzDeliLine.shift() +'.';
+    return 'Currently serving number' + katzDeliLine.shift() +'.';
   }
 }
+// no longer want to store customer names in an array
 
 function currentLine(katzDeliLine) {
   if (katzDeliLine.length === 0) {
